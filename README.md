@@ -1,4 +1,4 @@
-# Packer Example - Ubuntu 18.04 minimal Vagrant Box
+# Packer Example - Ubuntu 19.04 minimal Vagrant Box
 
 **Current Ubuntu Version Used**: 18.04.2
 
