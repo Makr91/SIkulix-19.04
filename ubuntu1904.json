@@ -1,7 +1,7 @@
 {
   "variables": {
     "version": "0.0.{{timestamp}}",
-	"cloud_token": "VH2nVBXg3aQI6g.atlasv1.gtStUUp2nMObIDsaDYkyOzJAkvCkUihmSkRKvv7Ayg4v9aOIxSexhjPJEOeTdiwk0Jw"
+	"cloud_token": "null"
   },
   "provisioners": [
     {
