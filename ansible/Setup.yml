@@ -34,6 +34,7 @@
       - "tasksel"
       - "gnome-session"
       - "gdm3"
+      - "python-pip"
 - 
   apt: 
     name: "{{ packages }}"
@@ -52,25 +53,11 @@
   name: "Ensure ansible-cache directory exists"
 - 
   lineinfile: 
-    line: "AutomaticLoginEnable = True"
-    path: /etc/gdm3/custom.conf
-    regexp: "^#  AutomaticLoginEnable = true"
-    insertafter: '^#  AutomaticLoginEnable = true'
-  name: "Setting Automatic Login to True"
-- 
-  lineinfile: 
     line: "InitialSetupEnable = false"
     path: /etc/gdm3/custom.conf
     regexp: "^[daemon]"
     insertafter: '^[daemon]'
   name: "Disabling Ubuntu Welcome Screen"
-- 
-  lineinfile: 
-    line: "AutomaticLogin = vagrant"
-    path: /etc/gdm3/custom.conf
-    regexp: "^#  AutomaticLogin = user1"
-    insertafter: '^#  AutomaticLogin = user1'
-  name: "Setting Automatic Login to Vagrant"
 - 
   lineinfile: 
     line: "TCPKeepAlive yes"
@@ -170,3 +157,29 @@
       - "gstreamer1.0-libav:i386"
       - "libncurses5:i386"
       - "libsane:i386"
+-
+  delay: 5
+  get_url:
+    dest: /root/Downloads/install-xrdp-3.0.zip
+    url: "http://www.c-nergy.be/downloads/install-xrdp-3.0.zip"
+  name: "Downloading XRDP script"
+  register: xrdp_source
+  retries: 5
+  until: "xrdp_source is success"
+-
+  name: Unzipping XRDP Installation Script
+  unarchive:
+    dest: /root/Downloads
+    mode: a+x
+    src: /root/Downloads/install-xrdp-3.0.zip
+    remote_src: yes
+-
+  name: Changing perm of XRDP Installer
+  file:
+    dest: /root/Downloads/Install-xrdp-3.0.sh
+    mode: a+x
+-
+  name: "Installing XRDP"
+  become: true
+  command: "/root/Downloads/Install-xrdp-3.0.sh"
+

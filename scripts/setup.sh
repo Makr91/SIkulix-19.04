@@ -6,3 +6,6 @@ sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 
 # Disable daily apt unattended updates.
 echo 'APT::Periodic::Enable "0";' >> /etc/apt/apt.conf.d/10periodic
+mkdir /root/Downloads
+mkdir /home/vagrant/.config/
+mkdir /home/vagrant/.config/autostart

@@ -1,7 +1,6 @@
 {
   "variables": {
-    "version": "0.0.{{timestamp}}",
-	"cloud_token": "null"
+    "version": "0.0.{{timestamp}}"
   },
   "provisioners": [
     {

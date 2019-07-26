@@ -173,11 +173,6 @@
     value: false
   name: "Configure git AutoCRLF"
 - 
-  file: 
-    path: /home/vagrant/.config/autostart
-    state: directory
-  name: "Start Jenkins when User logins"
-- 
   lineinfile: 
     insertafter: "^#assistive_technologi"
     line: "#" 

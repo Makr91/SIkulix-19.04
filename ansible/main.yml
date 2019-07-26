@@ -26,3 +26,6 @@
     - 
       name: "Running Jenkins Setup"
       include: Jenkins.yml
+    - 
+      name: "Running Crossover Setup"
+      include: CrossOver.yml
