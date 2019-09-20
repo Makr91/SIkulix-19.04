@@ -35,6 +35,7 @@
       - "gnome-session"
       - "gdm3"
       - "python-pip"
+      - "preload"
 - 
   apt: 
     name: "{{ packages }}"
