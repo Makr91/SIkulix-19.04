@@ -6,7 +6,7 @@
 
   - [`vagrant init geerlingguy/ubuntu1904`](https://vagrantcloud.com/geerlingguy/boxes/ubuntu1904)
 
-This example build configuration installs and configures Ubuntu 18.04 x86_64 minimal using Ansible, and then generates a Vagrant box file for VirtualBox.
+This example build configuration installs and configures Ubuntu 19.04 x86_64 minimal using Ansible, and then generates a Vagrant box file for VirtualBox.
 
 The example can be modified to use more Ansible roles, plays, and included playbooks to fully configure (or partially) configure a box file suitable for deployment for development environments.
 
